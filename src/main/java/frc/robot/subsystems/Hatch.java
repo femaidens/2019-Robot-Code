@@ -8,20 +8,24 @@ import frc.robot.commands.PushHatch;
 public class Hatch extends Subsystem{
 
 public Hatch(){
+  System.out.println("subsytsem");
 }
 
 public static DoubleSolenoid hatchPiston = new DoubleSolenoid(RobotMap.hatchPort1, RobotMap.hatchPort2);
 
 public static void extend(){
+System.out.println(hatchPiston.get());
 hatchPiston.set(DoubleSolenoid.Value.kForward);
+System.out.println(hatchPiston.get());
 }
 
 public static void retract(){
 hatchPiston.set(DoubleSolenoid.Value.kReverse);
+System.out.println(hatchPiston.get());
 }
 
 public void initDefaultCommand(){
-  setDefaultCommand(new PushHatch());
+  //setDefaultCommand(new PushHatch());
 }
 }
 

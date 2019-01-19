@@ -20,6 +20,7 @@ public class Cargo extends Subsystem {
 
   public Cargo(){
   }
+  /*
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   public static DoubleSolenoid cargoPistLeft = new DoubleSolenoid(RobotMap.cargoPistPortL1, RobotMap.cargoPistPortL2);
@@ -48,8 +49,9 @@ public class Cargo extends Subsystem {
     usquishMotorLeft.set(ControlMode.PercentOutput, -s);
     usquishMotorRight.set(ControlMode.PercentOutput, -s);
   }
+  */
   @Override
-  public void initDefaultCommand() {
+  public void initDefaultCommand() { 
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }

@@ -17,6 +17,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
  * Add your docs here.
  */
 public class Lift extends Subsystem {
+  /*
   public static double[] height = {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
   public static Encoder leftEncoder = new Encoder(RobotMap.casEncLeft1, RobotMap.casEncLeft2);
   public static Encoder rightEncoder = new Encoder(RobotMap.casEncRight1, RobotMap.casEncRight2);
@@ -24,11 +25,12 @@ public class Lift extends Subsystem {
   public static TalonSRX leftCasMotor = new TalonSRX(RobotMap.leftCasPort);
   public static TalonSRX rightCasMotor = new TalonSRX(RobotMap.rightCasPort);
   public static int level  = 0;
-
+*/
   public Lift(){
   }
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  /*
   public static void move(double d, double s){
     while (leftEncoder.get() < distance){
       leftCasMotor.set(ControlMode.PercentOutput, s);
@@ -50,7 +52,7 @@ public class Lift extends Subsystem {
       level--;
   }
 }
-
+*/
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

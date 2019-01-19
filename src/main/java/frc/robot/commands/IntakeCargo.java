@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Cargo;
 
 public class IntakeCargo extends Command {
+  /*
   public IntakeCargo() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -26,7 +27,7 @@ public class IntakeCargo extends Command {
   protected void execute() {
     Cargo.intake(0.5);
   }
-
+*/
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {

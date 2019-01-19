@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Climber;
 
 public class ToggleBackClimb extends Command {
+  /*
   public ToggleBackClimb() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -26,7 +27,7 @@ public class ToggleBackClimb extends Command {
   protected void execute() {
     Climber.extendBack();
   }
-
+*/
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
@@ -40,8 +41,10 @@ public class ToggleBackClimb extends Command {
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
+  /*
   @Override
   protected void interrupted() {
     Climber.retractBack();
   }
+  */
 }

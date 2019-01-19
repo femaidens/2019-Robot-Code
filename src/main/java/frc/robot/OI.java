@@ -23,37 +23,51 @@ import edu.wpi.first.wpilibj.buttons.*;
  */
 public class OI {
 
+
+
   public static Joystick driveJoystick = new Joystick(RobotMap.driveJoyPort);
 
   //cascade
-  public static Button casUp = new JoystickButton(driveJoystick, 0); //moves cascade up
-  public static Button casDown = new JoystickButton(driveJoystick, 0); //moves cascade down
+  //public static Button casUp = new JoystickButton(driveJoystick, 0); //moves cascade up
+  //public static Button casDown = new JoystickButton(driveJoystick, 0); //moves cascade down
 
   //hatch
-  public static Button hatch = new JoystickButton(driveJoystick,1); //release and acquire hatch
+  public static Button hatch = new JoystickButton(driveJoystick, 1); //release and acquire hatch //
+  //xbox
+  //1-A
+  //2-B
+  //3-X
+  //4-Y
+  //5-top left
+  //6-top right
 
   //climber
-  public static Button climbFront = new JoystickButton(driveJoystick, 0);
-  public static Button climbBack = new JoystickButton(driveJoystick, 0);
+  //public static Button climbFront = new JoystickButton(driveJoystick, 0);
+  //public static Button climbBack = new JoystickButton(driveJoystick, 0);
 
   //cargo
-  public static Button intake = new JoystickButton(driveJoystick, 0);
-  public static Button shoot = new JoystickButton(driveJoystick, 0);
-  public static Button toggleIntake = new JoystickButton(driveJoystick, 0);
+  //public static Button intake = new JoystickButton(driveJoystick, 0);
+  //public static Button shoot = new JoystickButton(driveJoystick, 0);
+  //public static Button toggleIntake = new JoystickButton(driveJoystick, 0);
 
+  public OI(){
+    System.out.println("OI running");
+    bindButtons();
+  }
   public void bindButtons(){
-    casUp.whenPressed(new CascadeUp());
-    casDown.whenPressed(new CascadeDown());
+   // casUp.whenPressed(new CascadeUp());
+   // casDown.whenPressed(new CascadeDown());
 
-    hatch.whenPressed(new PushHatch());
-
+    hatch.whenPressed(new PushHatch()); //A button
+    
+    /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());
     climbBack.toggleWhenPressed(new ToggleBackClimb());
 
     intake.whileHeld(new IntakeCargo());
     shoot.whileHeld(new ShootCargo());
     toggleIntake.toggleWhenPressed(new ToggleIntake());
-
+*/
   }
   }
  

@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Lift;
 
 public class CascadeUp extends Command {
+  /*
   public CascadeUp() {
     
     // Use requires() here to declare subsystem dependencies
@@ -27,7 +28,7 @@ public class CascadeUp extends Command {
   protected void execute() {
     Lift.up();
   }
-
+*/
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
@@ -44,4 +45,5 @@ public class CascadeUp extends Command {
   @Override
   protected void interrupted() {
   }
+  
 }

@@ -24,7 +24,7 @@ public class ShootCargo extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Cargo.shootCargo(1.0);
+    //Cargo.shootCargo(1.0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

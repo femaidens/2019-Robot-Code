@@ -22,8 +22,8 @@ public class RobotMap {
   public static int rearLeftPort = 0;
 
   //ports for hatch DoubleSolenoid 
-  public static int hatchPort1 = 0; //placeholder
-  public static int hatchPort2 = 1; //placeholder
+  public static int hatchPort1 = 2; //placeholder
+  public static int hatchPort2 = 3; //placeholder
 
   //ports for cascade motors
   public static int leftCasPort = 0; //placeholder

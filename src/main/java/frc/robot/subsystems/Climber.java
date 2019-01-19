@@ -18,7 +18,7 @@ public class Climber extends Subsystem {
 
   public Climber(){
   }
-  
+  /*
 
   public static DoubleSolenoid frontPiston1 = new DoubleSolenoid(RobotMap.frontClimbPort1, RobotMap.frontClimbPort2);
   public static DoubleSolenoid frontPiston2 = new DoubleSolenoid(RobotMap.frontClimbPort3, RobotMap.frontClimbPort4);
@@ -43,7 +43,7 @@ public class Climber extends Subsystem {
   }
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-
+*/
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
