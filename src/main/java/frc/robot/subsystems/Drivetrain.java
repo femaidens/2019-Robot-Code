@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.*;
+import frc.robot.OI;
 // USE THE XBOX CONTROLLER CLASS
 import frc.robot.RobotMap;
 
@@ -25,14 +26,13 @@ public static Counter rightHall = new Counter(2);
 
 public static AnalogGyro gyro = new AnalogGyro(0);
 
-public static Joystick driveJoystick = new Joystick(0);
 public Drivetrain(){
 }	
 
 public static void driveTeleop(){
 
-	double leftSpeed = driveJoystick.getRawAxis(1);
-	double rightSpeed = driveJoystick.getRawAxis(5);
+	double leftSpeed = OI.driveJoystick.getRawAxis(1);
+	double rightSpeed = OI.driveJoystick.getRawAxis(5);
 	frontLeft.set(leftSpeed);
 rearLeft.set(leftSpeed);
 frontRight.set(rightSpeed); 

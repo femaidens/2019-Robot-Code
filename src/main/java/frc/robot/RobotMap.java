@@ -15,13 +15,42 @@ package frc.robot;
  */
 public class RobotMap {
 
+  //drivtrain motors (spark max)
   public static int frontRightPort = 12;
   public static int frontLeftPort = 15;
   public static int rearRightPort = 2;
   public static int rearLeftPort = 0;
 
+  //ports for hatch DoubleSolenoid 
   public static int hatchPort1 = 0; //placeholder
   public static int hatchPort2 = 1; //placeholder
+
+  //ports for cascade motors
+  public static int leftCasPort = 0; //placeholder
+  public static int rightCasPort = 1; //placeholder
+
+  //ports for encoders 
+  //placeholders
+  public static int casEncLeft1 = 0;
+  public static int casEncLeft2 = 1;
+  public static int casEncRight1 = 2;
+  public static int casEncRight2 = 0;
+
+  //joystick 
+  public static int driveJoyPort = 0; //placeholder
+
+  //climber (front pistons)
+  public static int frontClimbPort1 = 0; 
+  public static int frontClimbPort2 = 0; 
+  public static int frontClimbPort3 = 0; 
+  public static int frontClimbPort4 = 0; 
+
+  //(back pistons)
+  public static int backClimbPort1 = 0; 
+  public static int backClimbPort2 = 0; 
+  public static int backClimbPort3 = 0; 
+  public static int backClimbPort4 = 0; 
+
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;
