@@ -7,18 +7,13 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.Hatch;
-import frc.robot.Robot;
+import frc.robot.subsystems.Cargo;
 
-public class PushHatch extends Command {
-  public static boolean extended = false;
-  public PushHatch() {
-    System.out.println("command");
+public class ShootCargo extends Command {
+  public ShootCargo() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.hatch);
   }
 
   // Called just before this Command runs the first time
@@ -27,40 +22,15 @@ public class PushHatch extends Command {
   }
 
   // Called repeatedly when this Command is scheduled to run
-  //@Override
-  protected void execute() {  
-    //Hatch.extend();
-    //System.out.println("extenddd");
-   
-    if (extended){
-      Hatch.retract();
-      extended = false;
-      System.out.println("retractt");
-
-    }
-    else{
-      Hatch.extend();
-      extended = true;
-      System.out.println("extendd");
-      
-    } 
-    
-    /*
-    if (Hatch.hatchPiston.get() == DoubleSolenoid.Value.kForward){
-      Hatch.retract();
-      System.out.println("retractttt");
-    }  
-    else{
-      Hatch.extend();
-      System.out.println("extenddd");
-    }
-    */
+  @Override
+  protected void execute() {
+    //Cargo.shootCargo(1.0);
   }
 
   // Make this return true when this Command no longer needs to run execute()
- // @Override
+  @Override
   protected boolean isFinished() {
-    return true;
+    return false;
   }
 
   // Called once after isFinished returns true
@@ -72,7 +42,5 @@ public class PushHatch extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    //Hatch.retract();
-    //System.out.println("retractttt");
   }
 }

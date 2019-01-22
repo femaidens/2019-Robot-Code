@@ -9,11 +9,13 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.*;
+import frc.robot.OI;
 // USE THE XBOX CONTROLLER CLASS
 import frc.robot.RobotMap;
 
 public class Drivetrain extends Subsystem{
 
+	/*
 public static CANSparkMax frontLeft = new CANSparkMax(RobotMap.frontLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
 public static CANSparkMax frontRight = new CANSparkMax(RobotMap.frontRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
 public static CANSparkMax rearLeft = new CANSparkMax(RobotMap.rearLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
@@ -24,16 +26,15 @@ public static Counter leftHall = new Counter(1);
 public static Counter rightHall = new Counter(2);
 
 public static AnalogGyro gyro = new AnalogGyro(0);
-
-public static Joystick driveJoystick = new Joystick(0);
+*/
 public Drivetrain(){
 	
 }	
-
+/*
 public static void driveTeleop(){
 
-	double leftSpeed = driveJoystick.getRawAxis(1);
-	double rightSpeed = driveJoystick.getRawAxis(5);
+	double leftSpeed = OI.driveJoystick.getRawAxis(1);
+	double rightSpeed = OI.driveJoystick.getRawAxis(5);
 	frontLeft.set(leftSpeed);
 	rearLeft.set(leftSpeed);
 	frontRight.set(rightSpeed); 
@@ -82,9 +83,9 @@ rearLeft.set(l);
 frontRight.set(r); 
 rearRight.set(r);
 } 
-
+*/
 public void initDefaultCommand(){
-	setDefaultCommand(new DriveTeleop());
-	System.out.println("teleopping");
+	//setDefaultCommand(new DriveTeleop());
+	//System.out.println("teleopping");
 }
 }

@@ -6,37 +6,69 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.commands.CascadeDown;
+import frc.robot.commands.CascadeUp;
+import frc.robot.commands.IntakeCargo;
+import frc.robot.commands.PushHatch;
+import frc.robot.commands.ShootCargo;
+import frc.robot.commands.ToggleBackClimb;
+import frc.robot.commands.ToggleFrontClimb;
+import frc.robot.commands.ToggleIntake;
+import edu.wpi.first.wpilibj.buttons.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  //// CREATING BUTTONS
-  // One type of button is a joystick button which is any button on a
-  //// joystick.
-  // You create one by telling it which joystick it's on and which button
-  // number it is.
-  // Joystick stick = new Joystick(port);
-  // Button button = new JoystickButton(stick, buttonNumber);
 
-  // There are a few additional built in buttons you can use. Additionally,
-  // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
 
-  //// TRIGGERING COMMANDS WITH BUTTONS
-  // Once you have a button, it's trivial to bind it to a button in one of
-  // three ways:
 
-  // Start the command when the button is pressed and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
+  public static Joystick driveJoystick = new Joystick(RobotMap.driveJoyPort);
 
-  // Run the command while the button is being held down and interrupt it once
-  // the button is released.
-  // button.whileHeld(new ExampleCommand());
+  //cascade
+  //public static Button casUp = new JoystickButton(driveJoystick, 0); //moves cascade up
+  //public static Button casDown = new JoystickButton(driveJoystick, 0); //moves cascade down
 
-  // Start the command when the button is released and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
-}
+  //hatch
+  public static Button hatch = new JoystickButton(driveJoystick, 1); //release and acquire hatch //
+  //xbox
+  //1-A
+  //2-B
+  //3-X
+  //4-Y
+  //5-top left
+  //6-top right
+
+  //climber
+  //public static Button climbFront = new JoystickButton(driveJoystick, 0);
+  //public static Button climbBack = new JoystickButton(driveJoystick, 0);
+
+  //cargo
+  //public static Button intake = new JoystickButton(driveJoystick, 0);
+  //public static Button shoot = new JoystickButton(driveJoystick, 0);
+  //public static Button toggleIntake = new JoystickButton(driveJoystick, 0);
+
+  public OI(){
+    System.out.println("OI running");
+    bindButtons();
+  }
+  public void bindButtons(){
+   // casUp.whenPressed(new CascadeUp());
+   // casDown.whenPressed(new CascadeDown());
+
+    hatch.whenPressed(new PushHatch()); //A button
+    
+    /*
+    climbFront.toggleWhenPressed(new ToggleFrontClimb());
+    climbBack.toggleWhenPressed(new ToggleBackClimb());
+
+    intake.whileHeld(new IntakeCargo());
+    shoot.whileHeld(new ShootCargo());
+    toggleIntake.toggleWhenPressed(new ToggleIntake());
+*/
+  }
+  }
+ 
+
