@@ -28,6 +28,7 @@ public static Counter rightHall = new Counter(2);
 public static AnalogGyro gyro = new AnalogGyro(0);
 */
 public Drivetrain(){
+	
 }	
 /*
 public static void driveTeleop(){
@@ -35,18 +36,23 @@ public static void driveTeleop(){
 	double leftSpeed = OI.driveJoystick.getRawAxis(1);
 	double rightSpeed = OI.driveJoystick.getRawAxis(5);
 	frontLeft.set(leftSpeed);
-rearLeft.set(leftSpeed);
-frontRight.set(rightSpeed); 
-rearRight.set(rightSpeed);
+	rearLeft.set(leftSpeed);
+	frontRight.set(rightSpeed); 
+	rearRight.set(rightSpeed);
+//hello8
 
-while(leftSpeed != 0 || rightSpeed != 0){
+/* while(leftSpeed != 0 || rightSpeed != 0){
 	if(leftSpeed != 0)
 		System.out.println("Left motor driving");
-	else if(rightSpeed != 0)
-		System.out.println("Right motor driving");
-	else
+	if(rightSpeed != 0)
+		System.out.println("Right motor driving"); */
+ 
+		/*
+		else
 		System.out.println("Not moving");
 }
+		*/
+
 
 
 }

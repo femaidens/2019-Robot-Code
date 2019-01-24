@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Hatch;
-import edu.wpi.first.wpilibj.Compressor;
+import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Limelight;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,11 +24,9 @@ import edu.wpi.first.wpilibj.Compressor;
  * project.
  */
 public class Robot extends TimedRobot {
- // public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  //public static Drivetrain drivetrain = new Drivetrain();
-  public static Hatch hatch;
+  public static Drivetrain drivetrain;
   public static OI m_oi;
-  public static Compressor compressete;
+  public static Limelight limelight;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -39,12 +37,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    m_oi = new OI();
+    drivetrain = new Drivetrain();
+    limelight = new Limelight();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     //SmartDashboard.putData("Auto mode", m_chooser);
-    compressete = new Compressor();
-    hatch = new Hatch();
-    m_oi = new OI();
   }
 
   /**

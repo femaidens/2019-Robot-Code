@@ -9,16 +9,18 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.Robot;
 
 public class DriveTeleop extends Command{
   /*
   public DriveTeleop(){ 
+    requires(Robot.drivetrain);
   }
   protected void initialize(){
   }
   protected void execute() {
     System.out.println("commandinggg");
-  Drivetrain.driveTeleop();
+    Drivetrain.driveTeleop();
   }
   */
   protected boolean isFinished() {
