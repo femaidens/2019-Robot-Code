@@ -42,25 +42,30 @@ public class RobotMap {
   //climber (front pistons)
   public static int frontClimbPort1 = 0; 
   public static int frontClimbPort2 = 0; 
-  public static int frontClimbPort3 = 0; 
-  public static int frontClimbPort4 = 0; 
+  //public static int frontClimbPort3 = 0; 
+  //public static int frontClimbPort4 = 0; 
 
   //(back pistons)
   public static int backClimbPort1 = 0; 
   public static int backClimbPort2 = 0; 
-  public static int backClimbPort3 = 0; 
-  public static int backClimbPort4 = 0; 
+  //public static int backClimbPort3 = 0; 
+  //public static int backClimbPort4 = 0; 
 
   //cargo ports (pistons)
-  public static int cargoPistPortL1 = 0;
-  public static int cargoPistPortL2 = 0;
-  public static int cargoPistPortR1 = 0;
-  public static int cargoPistPortR2 = 0;
+  public static int cargoPistPort1 = 0;
+  public static int cargoPistPort2 = 0;
+  //public static int cargoPistPortR1 = 0;
+  //public static int cargoPistPortR2 = 0;
 
   //cargo motor ports 
   public static int intakeCargoPort = 0;
   public static int leftusquishPort = 0;
   public static int rightusquishPort = 0;
+
+  //lift hall sensor ports 
+  public static int casHallLeft = 0;
+  public static int casHallRight = 0;
+
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;

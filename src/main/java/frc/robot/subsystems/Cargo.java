@@ -20,23 +20,25 @@ public class Cargo extends Subsystem {
 
   public Cargo(){
   }
-  /*
+
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public static DoubleSolenoid cargoPistLeft = new DoubleSolenoid(RobotMap.cargoPistPortL1, RobotMap.cargoPistPortL2);
-  public static DoubleSolenoid cargoPistRight = new DoubleSolenoid(RobotMap.cargoPistPortR1, RobotMap.cargoPistPortR2);
+  //the 2 cargo pistons with 1 double solenoid
+  public static DoubleSolenoid cargoPistons = new DoubleSolenoid(RobotMap.cargoPistPortL1, RobotMap.cargoPistPortL2);
+  //public static DoubleSolenoid cargoPistRight = new DoubleSolenoid(RobotMap.cargoPistPortR1, RobotMap.cargoPistPortR2);
   public static TalonSRX intakeCargo = new TalonSRX(RobotMap.intakeCargoPort);
   public static TalonSRX usquishMotorLeft = new TalonSRX(RobotMap.leftusquishPort);
   public static TalonSRX usquishMotorRight = new TalonSRX(RobotMap.rightusquishPort);
 
   public static void extendIntake(){
-    cargoPistLeft.set(DoubleSolenoid.Value.kForward);
-    cargoPistRight.set(DoubleSolenoid.Value.kForward);
+    cargoPistons.set(DoubleSolenoid.Value.kForward);
+    //cargoPistRight.set(DoubleSolenoid.Value.kForward);
   }
 
   public static void retractIntake(){
-    cargoPistLeft.set(DoubleSolenoid.Value.kReverse);
-    cargoPistRight.set(DoubleSolenoid.Value.kReverse);
+    //cargoPistLeft.set(DoubleSolenoid.Value.kReverse);
+    //cargoPistRight.set(DoubleSolenoid.Value.kReverse);
+    cargoPistons.set(DoubleSolenoid.Value.kReverse);
   }
 
   public static void intake(double s){
@@ -49,7 +51,7 @@ public class Cargo extends Subsystem {
     usquishMotorLeft.set(ControlMode.PercentOutput, -s);
     usquishMotorRight.set(ControlMode.PercentOutput, -s);
   }
-  */
+  
   @Override
   public void initDefaultCommand() { 
     // Set the default command for a subsystem here.
