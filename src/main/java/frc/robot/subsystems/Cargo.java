@@ -20,11 +20,11 @@ public class Cargo extends Subsystem {
 
   public Cargo(){
   }
-
+//
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   //the 2 cargo pistons with 1 double solenoid
-  public static DoubleSolenoid cargoPistons = new DoubleSolenoid(RobotMap.cargoPistPortL1, RobotMap.cargoPistPortL2);
+  public static DoubleSolenoid cargoPistons = new DoubleSolenoid(RobotMap.cargoPistPort1, RobotMap.cargoPistPort2);
   //public static DoubleSolenoid cargoPistRight = new DoubleSolenoid(RobotMap.cargoPistPortR1, RobotMap.cargoPistPortR2);
   public static TalonSRX intakeCargo = new TalonSRX(RobotMap.intakeCargoPort);
   public static TalonSRX usquishMotorLeft = new TalonSRX(RobotMap.leftusquishPort);
