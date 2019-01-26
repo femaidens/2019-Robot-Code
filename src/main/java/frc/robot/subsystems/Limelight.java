@@ -29,7 +29,7 @@ public class Limelight extends Subsystem {
   // makes a cell to store whether target has been obtained 
   NetworkTableEntry tv = table.getEntry("tv");
   
-  // makes a cell for distance from “target”
+  // makes a cell for distance from “target�?
   NetworkTableEntry tx = table.getEntry("tx");
 
   //makes a cell doe percent image

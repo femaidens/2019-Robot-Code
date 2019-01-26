@@ -26,8 +26,8 @@ public class RobotMap {
   public static int hatchPort2 = 3; //placeholder
 
   //ports for cascade motors
-  public static int leftCasPort = 0; //placeholder
-  public static int rightCasPort = 1; //placeholder
+  public static int leftCasPort = 12; //placeholder
+  public static int rightCasPort = 15; //placeholder
 
   //ports for encoders 
   //placeholders

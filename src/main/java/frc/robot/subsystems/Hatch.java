@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.PushHatch;
 
 public class Hatch extends Subsystem{
-
+/*
 public Hatch(){
   System.out.println("subsytsem");
 }
@@ -23,7 +23,7 @@ public static void retract(){
 hatchPiston.set(DoubleSolenoid.Value.kReverse);
 System.out.println(hatchPiston.get());
 }
-
+*/
 public void initDefaultCommand(){
   //setDefaultCommand(new PushHatch());
 }

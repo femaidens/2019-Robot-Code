@@ -13,8 +13,9 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Limelight;
+import frc.robot.subsystems.Hatch;
+import frc.robot.subsystems.LiftSpark;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +28,8 @@ public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static OI m_oi;
   public static Limelight limelight;
+  public static LiftSpark liftSpark;
+  //public static Hatch hatch;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -40,6 +43,8 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     drivetrain = new Drivetrain();
     limelight = new Limelight();
+    liftSpark = new LiftSpark();
+    //hatch = new Hatch();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     //SmartDashboard.putData("Auto mode", m_chooser);

@@ -17,7 +17,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
  * Add your docs here.
  */
 public class Cargo extends Subsystem {
-
+/*
   public Cargo(){
   }
 //
@@ -51,7 +51,7 @@ public class Cargo extends Subsystem {
     usquishMotorLeft.set(ControlMode.PercentOutput, -s);
     usquishMotorRight.set(ControlMode.PercentOutput, -s);
   }
-  
+  */
   @Override
   public void initDefaultCommand() { 
     // Set the default command for a subsystem here.

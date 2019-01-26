@@ -18,7 +18,7 @@ public class PushHatch extends Command {
     System.out.println("command");
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.hatch);
+    //requires(Robot.hatch);
   }
 
   // Called just before this Command runs the first time
@@ -28,6 +28,7 @@ public class PushHatch extends Command {
 
   // Called repeatedly when this Command is scheduled to run
   //@Override
+  /*
   protected void execute() {  
     //Hatch.extend();
     //System.out.println("extenddd");
@@ -54,8 +55,8 @@ public class PushHatch extends Command {
       Hatch.extend();
       System.out.println("extenddd");
     }
-    */
-  }
+    
+  }*/
 
   // Make this return true when this Command no longer needs to run execute()
  // @Override

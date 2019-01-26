@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.LiftSpark;
 
 public class CascadeDown extends Command {
   public CascadeDown() {
@@ -24,13 +25,13 @@ public class CascadeDown extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Lift.down();
+    LiftSpark.down();
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true
