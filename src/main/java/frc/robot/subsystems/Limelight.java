@@ -29,8 +29,11 @@ public class Limelight extends Subsystem {
   // makes a cell to store whether target has been obtained 
   NetworkTableEntry tv = table.getEntry("tv");
   
-  // makes a cell for distance from “target�?
+  // makes a cell for distance from “target�?
   NetworkTableEntry tx = table.getEntry("tx");
+
+  // makes a cell for skew
+  NetworkTableEntry ts = table.getEntry("ts");
 
   //makes a cell doe percent image
   //NetworkTableEntry ta = table.getEntry("ta");
@@ -45,6 +48,13 @@ public class Limelight extends Subsystem {
   public double getTx(){
     if(objectSighted())
       return tx.getDouble(0.0);
+    else
+      return 0;
+  }
+
+  public double getTs(){
+    if(objectSighted())
+      return ts.getDouble(0.0);
     else
       return 0;
   }

@@ -9,7 +9,9 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.CascadeDown;
 import frc.robot.commands.CascadeUp;
+import frc.robot.commands.CascadeZero;
 import frc.robot.commands.IntakeCargo;
+import frc.robot.commands.PrintTest;
 import frc.robot.commands.PushHatch;
 import frc.robot.commands.ShootCargo;
 import frc.robot.commands.ToggleBackClimb;
@@ -31,9 +33,10 @@ public class OI {
   //cascade
   public static Button casUp = new JoystickButton(driveJoystick, 4); //moves cascade up
   public static Button casDown = new JoystickButton(driveJoystick, 1); //moves cascade down
-
+  public static Button casZero = new JoystickButton(driveJoystick, 3);
   //hatch
   public static Button autoAlign = new JoystickButton(driveJoystick, 6); //release and acquire hatch //
+  public static Button printTest = new JoystickButton(driveJoystick, 5); // testing ts and tx values
   //xbox
   //1-A
   //2-B
@@ -60,7 +63,8 @@ public class OI {
     casDown.whenPressed(new CascadeDown());
 
     autoAlign.whenPressed(new AutoAlign()); //A button
-    
+    printTest.whenPressed(new PrintTest());
+    casZero.whenPressed(new CascadeZero());
     /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());
     climbBack.toggleWhenPressed(new ToggleBackClimb());

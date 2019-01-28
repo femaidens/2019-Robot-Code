@@ -9,10 +9,10 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.LiftSpark;
 
-public class AutoAlign extends Command {
-  /*
-  public AutoAlign() {
+public class PrintTest extends Command {
+  public PrintTest() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -20,19 +20,20 @@ public class AutoAlign extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.drivetrain.turnDegrees(Robot.limelight.getTx());
+    //System.out.println("Ts = " + Robot.limelight.getTs());
+    LiftSpark.printPosition();
+    //System.out.println("Tx = " + Robot.limelight.getTx());
   }
-  */
+
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true
