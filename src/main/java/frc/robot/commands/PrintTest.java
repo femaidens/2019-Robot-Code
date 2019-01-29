@@ -10,6 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.LiftSpark;
+import frc.robot.subsystems.Limelight;
 
 public class PrintTest extends Command {
   public PrintTest() {
@@ -25,9 +26,8 @@ public class PrintTest extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //System.out.println("Ts = " + Robot.limelight.getTs());
-    LiftSpark.printPosition();
-    //System.out.println("Tx = " + Robot.limelight.getTx());
+    
+    System.out.println("Tx = " + Robot.limelight.getTx());
   }
 
   // Make this return true when this Command no longer needs to run execute()

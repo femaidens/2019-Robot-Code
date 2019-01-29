@@ -21,9 +21,10 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 public class Limelight extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+  public static NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
 
   public Limelight(){
+    table.getEntry("camMode").setNumber(0);
   }
   
   // makes a cell to store whether target has been obtained 
@@ -51,13 +52,14 @@ public class Limelight extends Subsystem {
     else
       return 0;
   }
-
+/*
   public double getTs(){
     if(objectSighted())
       return ts.getDouble(0.0);
     else
       return 0;
   }
+  */
   
   /*public double getDistance(){
     double area = ta.getDouble(0.0);

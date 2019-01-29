@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -30,6 +32,8 @@ public class Robot extends TimedRobot {
   public static Limelight limelight;
   public static LiftSpark liftSpark;
   //public static Hatch hatch;
+
+  public static UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class AutoAlign extends Command {
-  /*
+  
   public AutoAlign() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -28,7 +28,7 @@ public class AutoAlign extends Command {
   protected void execute() {
     Robot.drivetrain.turnDegrees(Robot.limelight.getTx());
   }
-  */
+  
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {

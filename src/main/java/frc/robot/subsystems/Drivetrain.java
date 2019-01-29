@@ -14,7 +14,7 @@ import frc.robot.OI;
 import frc.robot.RobotMap;
 
 public class Drivetrain extends Subsystem{
-/*
+
 	
 public static CANSparkMax frontLeft = new CANSparkMax(RobotMap.frontLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
 public static CANSparkMax frontRight = new CANSparkMax(RobotMap.frontRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
@@ -30,7 +30,7 @@ public static AnalogGyro gyro = new AnalogGyro(0);
 public Drivetrain(){
 	
 }	
-/*
+
 public static void driveTeleop(){
 
 	double leftSpeed = OI.driveJoystick.getRawAxis(1);
@@ -39,24 +39,18 @@ public static void driveTeleop(){
 	rearLeft.set(leftSpeed);
 	frontRight.set(rightSpeed); 
 	rearRight.set(rightSpeed);
+}
 //hello8
-
-/* while(leftSpeed != 0 || rightSpeed != 0){
+/*
+ while(leftSpeed != 0 || rightSpeed != 0){
 	if(leftSpeed != 0)
 		System.out.println("Left motor driving");
 	if(rightSpeed != 0)
-		System.out.println("Right motor driving"); */
- 
-		/*
-		else
+		System.out.println("Right motor driving"); 
+	else
 		System.out.println("Not moving");
 }
-		
-
-
-
-
-
+		*/
 	public void turnDegrees(double degrees){
 		gyro.reset();
 		if (degrees > 0) {
@@ -83,7 +77,7 @@ rearLeft.set(l);
 frontRight.set(r); 
 rearRight.set(r);
 } 
-*/
+
 public void initDefaultCommand(){
 	//setDefaultCommand(new DriveTeleop());
 	//System.out.println("teleopping");
