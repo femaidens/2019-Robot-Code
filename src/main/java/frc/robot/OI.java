@@ -14,6 +14,7 @@ import frc.robot.commands.IntakeCargo;
 import frc.robot.commands.PrintTest;
 import frc.robot.commands.PushHatch;
 import frc.robot.commands.ShootCargo;
+import frc.robot.commands.StopAlign;
 import frc.robot.commands.ToggleBackClimb;
 import frc.robot.commands.ToggleFrontClimb;
 import frc.robot.commands.ToggleIntake;
@@ -62,7 +63,8 @@ public class OI {
     casUp.whenPressed(new CascadeUp());
     casDown.whenPressed(new CascadeDown());
 
-    autoAlign.whenPressed(new AutoAlign()); //A button
+    autoAlign.whileHeld(new AutoAlign()); 
+    autoAlign.whenReleased(new StopAlign());
     printTest.whenPressed(new PrintTest());
     casZero.whenPressed(new CascadeZero());
     /*

@@ -30,7 +30,7 @@ public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static OI m_oi;
   public static Limelight limelight;
-  public static LiftSpark liftSpark;
+  //public static LiftSpark liftSpark;
   //public static Hatch hatch;
 
   public static UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
@@ -47,7 +47,10 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     drivetrain = new Drivetrain();
     limelight = new Limelight();
-    liftSpark = new LiftSpark();
+    Limelight.table.getEntry("camMode").setNumber(1);
+    Robot.limelight.table.getEntry("ledMode").setNumber(1);
+
+    //liftSpark = new LiftSpark();
     //hatch = new Hatch();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -73,7 +76,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
-    LiftSpark.downToZero();
+    //LiftSpark.downToZero();
   }
 
   @Override

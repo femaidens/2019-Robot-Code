@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.Limelight;
 
-public class AutoAlign extends Command {
-  public AutoAlign() {
+public class StopAlign extends Command {
+  public StopAlign() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -20,33 +20,25 @@ public class AutoAlign extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.limelight.table.getEntry("camMode").setNumber(0);
-    Robot.limelight.table.getEntry("ledMode").setNumber(3);
-
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double degrees = Robot.limelight.getTx();
-    if(degrees > 10 || degrees < -10){
-      Robot.drivetrain.turnDegrees(degrees);
-    }
-    else{
-      Robot.drivetrain.drive(0.3, 0.3);
-    }
+    Robot.drivetrain.stopAlign();
+    Robot.limelight.table.getEntry("camMode").setNumber(1);
+    Robot.limelight.table.getEntry("ledMode").setNumber(1);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    
   }
 
   // Called when another command which requires one or more of the same
