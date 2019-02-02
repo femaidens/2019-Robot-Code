@@ -19,6 +19,7 @@ import frc.robot.commands.ToggleBackClimb;
 import frc.robot.commands.ToggleFrontClimb;
 import frc.robot.commands.ToggleIntake;
 import frc.robot.commands.AutoAlign;
+import frc.robot.commands.CamMode;
 import edu.wpi.first.wpilibj.buttons.*;
 
 /**
@@ -36,8 +37,9 @@ public class OI {
   public static Button casDown = new JoystickButton(driveJoystick, 1); //moves cascade down
   public static Button casZero = new JoystickButton(driveJoystick, 3);
   //hatch
-  public static Button autoAlign = new JoystickButton(driveJoystick, 6); //release and acquire hatch //
+  public static Button autoAlign = new JoystickButton(driveJoystick, 6); //release and acquire hatch
   public static Button printTest = new JoystickButton(driveJoystick, 5); // testing ts and tx values
+  public static Button camMode = new JoystickButton(driveJoystick, 2); // toggles cam mode for testing
   //xbox
   //1-A
   //2-B
@@ -66,7 +68,9 @@ public class OI {
     autoAlign.whileHeld(new AutoAlign()); 
     autoAlign.whenReleased(new StopAlign());
     printTest.whenPressed(new PrintTest());
+    camMode.whenPressed(new CamMode());
     casZero.whenPressed(new CascadeZero());
+
     /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());
     climbBack.toggleWhenPressed(new ToggleBackClimb());
