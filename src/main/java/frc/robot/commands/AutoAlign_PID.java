@@ -55,6 +55,7 @@ public class AutoAlign_PID extends Command {
   @Override
   protected void initialize() {
     Limelight.setLiveStream(0);
+    Limelight.setLEDMode(3);
   }
 
   // Called repeatedly when this Command is scheduled to run

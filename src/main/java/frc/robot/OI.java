@@ -9,13 +9,17 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.CascadeDown;
 import frc.robot.commands.CascadeUp;
+import frc.robot.commands.CascadeZero;
 import frc.robot.commands.IntakeCargo;
+import frc.robot.commands.PrintTest;
 import frc.robot.commands.PushHatch;
 import frc.robot.commands.ShootCargo;
+import frc.robot.commands.StopAlign;
 import frc.robot.commands.ToggleBackClimb;
 import frc.robot.commands.ToggleFrontClimb;
 import frc.robot.commands.ToggleIntake;
 import frc.robot.commands.AutoAlign_PID;
+import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.buttons.*;
 
 /**
@@ -29,11 +33,17 @@ public class OI {
   public static Joystick driveJoystick = new Joystick(RobotMap.driveJoyPort);
 
   //cascade
+  /*
   public static Button casUp = new JoystickButton(driveJoystick, 4); //moves cascade up
   public static Button casDown = new JoystickButton(driveJoystick, 1); //moves cascade down
+  public static Button casZero = new JoystickButton(driveJoystick, 3);
+  */ 
 
   //hatch
-  public static Button autoAlign = new JoystickButton(driveJoystick, 6); //release and acquire hatch //
+  public static Button autoAlign = new JoystickButton(driveJoystick, 1); //release and acquire hatch //
+  public static Button printTest = new JoystickButton(driveJoystick, 5); // testing ts and tx values
+
+  public static Button autoAlign1 = new JoystickButton(driveJoystick, 2);
   //xbox
   //1-A
   //2-B
@@ -56,12 +66,19 @@ public class OI {
     bindButtons();
   }
   public void bindButtons(){
+    /*
     casUp.whenPressed(new CascadeUp());
     casDown.whenPressed(new CascadeDown());
+    */
 
     //autoAlign.whenPressed(new AutoAlign()); //A button
-    autoAlign.whileHeld(new AutoAlign_PID());
+    autoAlign1.whileHeld(new AutoAlign_PID());
+    autoAlign1.whenReleased(new StopAlign());
     
+    autoAlign.whileHeld(new AutoAlign()); 
+    autoAlign.whenReleased(new StopAlign());
+    printTest.whenPressed(new PrintTest());
+    //casZero.whenPressed(new CascadeZero());
     /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());
     climbBack.toggleWhenPressed(new ToggleBackClimb());

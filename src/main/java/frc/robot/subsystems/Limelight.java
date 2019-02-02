@@ -23,12 +23,13 @@ public class Limelight extends Subsystem {
   public static NetworkTableEntry ts = table.getEntry("ts"); // skew or rotation (-90 to 0 degrees)
 
   public Limelight(){
+    setLiveStream(1);
   }
   
   public static boolean objectSighted(){
     if (tv.getDouble(0.0) == 1) return true;
     return false;
-  }
+   }  
   
   public static double getTx(){
     if(objectSighted()) return tx.getDouble(0.0);
@@ -43,6 +44,23 @@ public class Limelight extends Subsystem {
     // can just connect another USB camera to the limelight through the USB port
     //table.getEntry("stream").setNumber(0); // Standard Side-by-side streaming 
   }
+
+  public static void setLEDMode(int mode){
+    table.getEntry("ledMode").setNumber(mode);
+    // mode = 0	use the LED Mode set in the current pipeline
+    //mode = 1	force off
+    // mode = 2	force blink
+    //mode = 3	force on
+
+  }
+/*
+  public double getTs(){
+    if(objectSighted())
+      return ts.getDouble(0.0);
+    else
+      return 0;
+  }
+  */
   
   /*public double getDistance(){
     double area = ta.getDouble(0.0);

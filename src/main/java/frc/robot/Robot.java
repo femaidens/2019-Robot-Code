@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -32,7 +34,10 @@ public class Robot extends TimedRobot {
   public static LiftSpark liftSpark;
   public static Timer timer;
   
+  //public static LiftSpark liftSpark;
   //public static Hatch hatch;
+
+  public static UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -50,6 +55,10 @@ public class Robot extends TimedRobot {
     timer = new Timer();
     timer.reset();
     timer.start();
+    Limelight.table.getEntry("camMode").setNumber(1);
+    Robot.limelight.table.getEntry("ledMode").setNumber(1);
+
+    //liftSpark = new LiftSpark();
     //hatch = new Hatch();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -75,6 +84,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
+    //LiftSpark.downToZero();
   }
 
   @Override
