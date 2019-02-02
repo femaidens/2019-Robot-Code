@@ -9,7 +9,9 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Limelight;
+import frc.robot.subsystems.*;
+import frc.robot.commands.*;
+
 
 public class AutoAlign extends Command {
   public AutoAlign() {
@@ -20,8 +22,10 @@ public class AutoAlign extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.limelight.table.getEntry("camMode").setNumber(0);
-    Robot.limelight.table.getEntry("ledMode").setNumber(3);
+    //Robot.limelight.table.getEntry("camMode").setNumber(0);
+    //Robot.limelight.table.getEntry("ledMode").setNumber(3);
+    Limelight.setLiveStream(0);
+    Limelight.setLEDMode(3);
 
   }
 
@@ -33,7 +37,7 @@ public class AutoAlign extends Command {
       Robot.drivetrain.turnDegrees(degrees);
     }
     else{
-      Robot.drivetrain.drive(0.3, 0.3);
+      Drivetrain.drive(0.3, 0.3);
     }
   }
 

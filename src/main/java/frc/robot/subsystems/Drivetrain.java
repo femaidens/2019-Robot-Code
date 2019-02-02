@@ -58,7 +58,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	// Teleop
-	public void drive() {
+	public static void drive() {
 		double leftVal = OI.driveJoystick.getRawAxis(1);
 		double rightVal = OI.driveJoystick.getRawAxis(5);
 		 //System.out.println("leftVal: " + encoderLeft.get() + " rightVal: " + encoderRight.get());
@@ -69,7 +69,7 @@ public class Drivetrain extends Subsystem {
 		rearLeft.set(ControlMode.PercentOutput,-leftVal);	
 	}
 	
-	public void driveSlow() {
+	public static void driveSlow() {
 		double leftVal = OI.driveJoystick.getRawAxis(1);
 		double rightVal = OI.driveJoystick.getRawAxis(5);
 		 //System.out.println("leftVal: " + encoderLeft.get() + " rightVal: " + encoderRight.get());
@@ -188,10 +188,13 @@ import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.*;
 import frc.robot.OI;
+import com.revrobotics.CANEncoder;
 // USE THE XBOX CONTROLLER CLASS
 import frc.robot.RobotMap;
 
 public class Drivetrain extends Subsystem{
+<<<<<<< HEAD
+=======
 
 	
 public static CANSparkMax frontLeft = new CANSparkMax(RobotMap.frontLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
@@ -202,11 +205,46 @@ public static CANSparkMax rearRight = new CANSparkMax(RobotMap.rearRightPort, CA
 //hall sensors
 //public static Counter leftHall = new Counter(1);
 //public static Counter rightHall = new Counter(2);
+>>>>>>> 4deac8f2fb2291def56de5cfa40c93a1d8b70b5e
 
-public static AnalogGyro gyro = new AnalogGyro(0);
-
-public Drivetrain(){
 	
+<<<<<<< HEAD
+	public static CANSparkMax frontLeft = new CANSparkMax(RobotMap.frontLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	public static CANSparkMax frontRight = new CANSparkMax(RobotMap.frontRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	public static CANSparkMax rearLeft = new CANSparkMax(RobotMap.rearLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	public static CANSparkMax rearRight = new CANSparkMax(RobotMap.rearRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+
+	//hall sensors
+	//public static Counter leftHall = new Counter(1);
+	//public static Counter rightHall = new Counter(2);
+
+	public static AnalogGyro gyro = new AnalogGyro(0);
+
+	public static CANEncoder frontRightHall = frontRight.getEncoder();
+	public static CANEncoder rearRightHall = rearRight.getEncoder();
+	public static CANEncoder frontLeftHall = frontLeft.getEncoder();
+	public static CANEncoder rearLeftHall = rearLeft.getEncoder();
+
+	public static double radius = 8;
+	public static double gear_ratio = 50/12;
+	public static double constant = gear_ratio*Math.pow(radius, 2)*Math.PI;
+
+
+	public Drivetrain(){
+		
+	}	
+
+	public static void driveTeleop(){
+
+		double leftSpeed = OI.driveJoystick.getRawAxis(1);
+		double rightSpeed = OI.driveJoystick.getRawAxis(5);
+		frontLeft.set(leftSpeed);
+		rearLeft.set(leftSpeed);
+		frontRight.set(rightSpeed); 
+		rearRight.set(rightSpeed);
+	}
+	public static void turnDegrees(double degrees){
+=======
 }	
 
 public static void driveTeleop(){
@@ -230,6 +268,7 @@ public static void driveTeleop(){
 }
 		
 	public void turnDegrees(double degrees){
+>>>>>>> 4deac8f2fb2291def56de5cfa40c93a1d8b70b5e
 		gyro.reset();
 		if (degrees > 0) {
 			while (gyro.getAngle() < degrees) {
@@ -245,10 +284,23 @@ public static void driveTeleop(){
 				rearRight.set(0.25);
 				frontLeft.set(-0.25);
 				rearLeft.set(-0.25);
+			}
+		}
 	}
-}
-}
 
+<<<<<<< HEAD
+	public static void drive(double l, double r){
+		frontLeft.set(l);
+		rearLeft.set(l);
+		frontRight.set(r); 
+		rearRight.set(r);
+	} 
+	
+	public void initDefaultCommand(){
+		//setDefaultCommand(new DriveTeleop());
+		//System.out.println("teleopping");
+	}
+=======
 public void driveAuton(double l, double r){
 frontLeft.set(l);
 rearLeft.set(l);
@@ -260,5 +312,6 @@ public void initDefaultCommand(){
 	//setDefaultCommand(new DriveTeleop());
 	//System.out.println("teleopping");
 }
+>>>>>>> 4deac8f2fb2291def56de5cfa40c93a1d8b70b5e
 }
 */
