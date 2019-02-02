@@ -52,7 +52,7 @@ public class Limelight extends Subsystem {
     // mode = 2	force blink
     //mode = 3	force on
 
-  }
+}
 /*
   public double getTs(){
     if(objectSighted())

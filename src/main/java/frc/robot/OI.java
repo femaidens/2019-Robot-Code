@@ -18,13 +18,10 @@ import frc.robot.commands.StopAlign;
 import frc.robot.commands.ToggleBackClimb;
 import frc.robot.commands.ToggleFrontClimb;
 import frc.robot.commands.ToggleIntake;
-<<<<<<< HEAD
 import frc.robot.commands.AutoAlign;
 import frc.robot.commands.CamMode;
-=======
 import frc.robot.commands.AutoAlign_PID;
 import frc.robot.commands.*;
->>>>>>> 8fd281bf4b597172542f349a6430418a15b3fdbd
 import edu.wpi.first.wpilibj.buttons.*;
 
 /**
@@ -45,16 +42,11 @@ public class OI {
   */ 
 
   //hatch
-<<<<<<< HEAD
   public static Button autoAlign = new JoystickButton(driveJoystick, 6); //release and acquire hatch
   public static Button printTest = new JoystickButton(driveJoystick, 5); // testing ts and tx values
   public static Button camMode = new JoystickButton(driveJoystick, 2); // toggles cam mode for testing
-=======
-  public static Button autoAlign = new JoystickButton(driveJoystick, 1); //release and acquire hatch //
-  public static Button printTest = new JoystickButton(driveJoystick, 5); // testing ts and tx values
 
   public static Button autoAlign1 = new JoystickButton(driveJoystick, 2);
->>>>>>> 8fd281bf4b597172542f349a6430418a15b3fdbd
   //xbox
   //1-A
   //2-B
@@ -89,13 +81,9 @@ public class OI {
     autoAlign.whileHeld(new AutoAlign()); 
     autoAlign.whenReleased(new StopAlign());
     printTest.whenPressed(new PrintTest());
-<<<<<<< HEAD
     camMode.whenPressed(new CamMode());
-    casZero.whenPressed(new CascadeZero());
-
-=======
     //casZero.whenPressed(new CascadeZero());
->>>>>>> 8fd281bf4b597172542f349a6430418a15b3fdbd
+
     /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());
     climbBack.toggleWhenPressed(new ToggleBackClimb());
