@@ -15,7 +15,7 @@ import frc.robot.commands.ShootCargo;
 import frc.robot.commands.ToggleBackClimb;
 import frc.robot.commands.ToggleFrontClimb;
 import frc.robot.commands.ToggleIntake;
-import frc.robot.commands.AutoAlign;
+import frc.robot.commands.AutoAlign_PID;
 import edu.wpi.first.wpilibj.buttons.*;
 
 /**
@@ -59,7 +59,8 @@ public class OI {
     casUp.whenPressed(new CascadeUp());
     casDown.whenPressed(new CascadeDown());
 
-    autoAlign.whenPressed(new AutoAlign()); //A button
+    //autoAlign.whenPressed(new AutoAlign()); //A button
+    autoAlign.whileHeld(new AutoAlign_PID());
     
     /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());

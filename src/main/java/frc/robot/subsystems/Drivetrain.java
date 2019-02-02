@@ -10,54 +10,48 @@ import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.*;
 import frc.robot.OI;
+import com.revrobotics.CANEncoder;
 // USE THE XBOX CONTROLLER CLASS
 import frc.robot.RobotMap;
 
 public class Drivetrain extends Subsystem{
-/*
+
 	
-public static CANSparkMax frontLeft = new CANSparkMax(RobotMap.frontLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
-public static CANSparkMax frontRight = new CANSparkMax(RobotMap.frontRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
-public static CANSparkMax rearLeft = new CANSparkMax(RobotMap.rearLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
-public static CANSparkMax rearRight = new CANSparkMax(RobotMap.rearRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	public static CANSparkMax frontLeft = new CANSparkMax(RobotMap.frontLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	public static CANSparkMax frontRight = new CANSparkMax(RobotMap.frontRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	public static CANSparkMax rearLeft = new CANSparkMax(RobotMap.rearLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	public static CANSparkMax rearRight = new CANSparkMax(RobotMap.rearRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
 
-//hall sensors
-//public static Counter leftHall = new Counter(1);
-//public static Counter rightHall = new Counter(2);
+	//hall sensors
+	//public static Counter leftHall = new Counter(1);
+	//public static Counter rightHall = new Counter(2);
 
-public static AnalogGyro gyro = new AnalogGyro(0);
+	public static AnalogGyro gyro = new AnalogGyro(0);
 
-public Drivetrain(){
-	
-}	
-/*
-public static void driveTeleop(){
+	public static CANEncoder frontRightHall = frontRight.getEncoder();
+	public static CANEncoder rearRightHall = rearRight.getEncoder();
+	public static CANEncoder frontLeftHall = frontLeft.getEncoder();
+	public static CANEncoder rearLeftHall = rearLeft.getEncoder();
 
-	double leftSpeed = OI.driveJoystick.getRawAxis(1);
-	double rightSpeed = OI.driveJoystick.getRawAxis(5);
-	frontLeft.set(leftSpeed);
-	rearLeft.set(leftSpeed);
-	frontRight.set(rightSpeed); 
-	rearRight.set(rightSpeed);
-//hello8
+	public static double radius = 8;
+	public static double gear_ratio = 50/12;
+	public static double constant = gear_ratio*Math.pow(radius, 2)*Math.PI;
 
-/* while(leftSpeed != 0 || rightSpeed != 0){
-	if(leftSpeed != 0)
-		System.out.println("Left motor driving");
-	if(rightSpeed != 0)
-		System.out.println("Right motor driving"); */
- 
-		/*
-		else
-		System.out.println("Not moving");
-}
+
+	public Drivetrain(){
 		
+	}	
 
+	public static void driveTeleop(){
 
-
-
-
-	public void turnDegrees(double degrees){
+		double leftSpeed = OI.driveJoystick.getRawAxis(1);
+		double rightSpeed = OI.driveJoystick.getRawAxis(5);
+		frontLeft.set(leftSpeed);
+		rearLeft.set(leftSpeed);
+		frontRight.set(rightSpeed); 
+		rearRight.set(rightSpeed);
+	}
+	public static void turnDegrees(double degrees){
 		gyro.reset();
 		if (degrees > 0) {
 			while (gyro.getAngle() < degrees) {
@@ -73,19 +67,19 @@ public static void driveTeleop(){
 				rearRight.set(0.25);
 				frontLeft.set(-0.25);
 				rearLeft.set(-0.25);
+			}
+		}
 	}
-}
-}
 
-public void driveAuton(double l, double r){
-frontLeft.set(l);
-rearLeft.set(l);
-frontRight.set(r); 
-rearRight.set(r);
-} 
-*/
-public void initDefaultCommand(){
-	//setDefaultCommand(new DriveTeleop());
-	//System.out.println("teleopping");
-}
+	public static void drive(double l, double r){
+		frontLeft.set(l);
+		rearLeft.set(l);
+		frontRight.set(r); 
+		rearRight.set(r);
+	} 
+	
+	public void initDefaultCommand(){
+		//setDefaultCommand(new DriveTeleop());
+		//System.out.println("teleopping");
+	}
 }

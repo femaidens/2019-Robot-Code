@@ -16,6 +16,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.Hatch;
 import frc.robot.subsystems.LiftSpark;
+import edu.wpi.first.wpilibj.Timer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,6 +30,8 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Limelight limelight;
   public static LiftSpark liftSpark;
+  public static Timer timer;
+  
   //public static Hatch hatch;
 
   Command m_autonomousCommand;
@@ -44,6 +47,9 @@ public class Robot extends TimedRobot {
     drivetrain = new Drivetrain();
     limelight = new Limelight();
     liftSpark = new LiftSpark();
+    timer = new Timer();
+    timer.reset();
+    timer.start();
     //hatch = new Hatch();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
