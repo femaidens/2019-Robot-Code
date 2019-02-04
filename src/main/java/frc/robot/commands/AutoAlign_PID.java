@@ -54,13 +54,14 @@ public class AutoAlign_PID extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Limelight.setLiveStream(0);
-    Limelight.setLEDMode(3);
+    Robot.limelight.setLiveStream(0);
+    Robot.limelight.setLEDMode(3);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    System.out.println("holy shit");
     //Robot.drivetrain.turnDegrees(Robot.limelight.getTx());
     if (!Limelight.objectSighted()) return;
 
@@ -87,14 +88,15 @@ public class AutoAlign_PID extends Command {
   @Override
   protected boolean isFinished() {
     //return Drivetrain.frontRightHall.getPosition()*Drivetrain.constant >= distance || Drivetrain.frontLeftHall.getPosition()*Drivetrain.constant >= distance;
-    return true;
+    return false;
     //return false;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Limelight.setLiveStream(1);
+    //Robot.limelight.setLiveStream(1);
+    //Limelight.setLEDMode(1);
   }
 
   // Called when another command which requires one or more of the same

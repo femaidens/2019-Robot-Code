@@ -25,6 +25,7 @@ public class StopAlign extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    System.out.println("stopppp");
     Robot.drivetrain.stopAlign();
     Robot.limelight.table.getEntry("camMode").setNumber(1);
     Robot.limelight.table.getEntry("ledMode").setNumber(1);

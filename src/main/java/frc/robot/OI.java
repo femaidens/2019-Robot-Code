@@ -46,7 +46,7 @@ public class OI {
   public static Button printTest = new JoystickButton(driveJoystick, 5); // testing ts and tx values
   public static Button camMode = new JoystickButton(driveJoystick, 2); // toggles cam mode for testing
 
-  public static Button autoAlign1 = new JoystickButton(driveJoystick, 2);
+  public static Button autoAlign1 = new JoystickButton(driveJoystick, 1);
   //xbox
   //1-A
   //2-B
@@ -75,13 +75,13 @@ public class OI {
     */
 
     //autoAlign.whenPressed(new AutoAlign()); //A button
-    autoAlign1.whileHeld(new AutoAlign_PID());
+    autoAlign1.whileHeld(new AutoAlign_PID(.2,.2));
     autoAlign1.whenReleased(new StopAlign());
     
     autoAlign.whileHeld(new AutoAlign()); 
     autoAlign.whenReleased(new StopAlign());
     printTest.whenPressed(new PrintTest());
-    camMode.whenPressed(new CamMode());
+    //camMode.whenPressed(new CamMode());
     //casZero.whenPressed(new CascadeZero());
 
     /*
