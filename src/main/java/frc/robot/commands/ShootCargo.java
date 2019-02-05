@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Cargo;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class ShootCargo extends Command {
   public ShootCargo() {
@@ -24,7 +25,13 @@ public class ShootCargo extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Cargo.shootCargo(1.0);
+    //if pistons are extended, outtake both (used if ball gets stuck)
+    if (Cargo.cargoPistons.get() == DoubleSolenoid.Value.kForward){
+      Cargo.outtake(-0.5);
+    }
+    else{
+    Cargo.shootCargo(0.5);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

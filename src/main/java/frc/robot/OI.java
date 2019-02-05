@@ -46,9 +46,9 @@ public class OI {
   //public static Button climbBack = new JoystickButton(driveJoystick, 0);
 
   //cargo
-  //public static Button intake = new JoystickButton(driveJoystick, 0);
-  //public static Button shoot = new JoystickButton(driveJoystick, 0);
-  //public static Button toggleIntake = new JoystickButton(driveJoystick, 0);
+  public static Button intake = new JoystickButton(driveJoystick, 0);
+  public static Button shoot = new JoystickButton(driveJoystick, 0);
+  public static Button togglePistons = new JoystickButton(driveJoystick, 0);
 
   public OI(){
     System.out.println("OI running");
@@ -63,11 +63,11 @@ public class OI {
     /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());
     climbBack.toggleWhenPressed(new ToggleBackClimb());
-
+*/
     intake.whileHeld(new IntakeCargo());
     shoot.whileHeld(new ShootCargo());
-    toggleIntake.toggleWhenPressed(new ToggleIntake());
-*/
+    togglePistons.toggleWhenPressed(new ToggleIntake());
+
   }
   }
  

@@ -7,11 +7,14 @@
 
 package frc.robot.commands;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Cargo;
 
 public class IntakeCargo extends Command {
-  /*
+  DoubleSolenoid.Value extended = Cargo.cargoPistons.get();
   public IntakeCargo() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -25,13 +28,18 @@ public class IntakeCargo extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Cargo.intake(0.5);
+    if (extended == DoubleSolenoid.Value.kForward){
+    Cargo.intake(0.5); //intakes on level 1 & 2
+    }
+    else{
+      Cargo.level2CargoMotor.set(ControlMode.PercentOutput, 0.5);
+    }
   }
-*/
+
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true

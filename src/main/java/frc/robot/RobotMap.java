@@ -58,9 +58,9 @@ public class RobotMap {
   //public static int cargoPistPortR2 = 0;
 
   //cargo motor ports 
-  public static int intakeCargoPort = 0;
-  public static int leftusquishPort = 0;
-  public static int rightusquishPort = 0;
+  public static int level1CargoPort = 0;
+  public static int level2CargoPort = 0;
+  
 
   //lift hall sensor ports 
   public static int casHallLeft = 0;

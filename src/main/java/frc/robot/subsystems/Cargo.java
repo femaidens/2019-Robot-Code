@@ -26,9 +26,9 @@ public class Cargo extends Subsystem {
   //the 2 cargo pistons with 1 double solenoid
   public static DoubleSolenoid cargoPistons = new DoubleSolenoid(RobotMap.cargoPistPort1, RobotMap.cargoPistPort2);
   //public static DoubleSolenoid cargoPistRight = new DoubleSolenoid(RobotMap.cargoPistPortR1, RobotMap.cargoPistPortR2);
-  public static TalonSRX intakeCargo = new TalonSRX(RobotMap.intakeCargoPort);
-  public static TalonSRX usquishMotorLeft = new TalonSRX(RobotMap.leftusquishPort);
-  public static TalonSRX usquishMotorRight = new TalonSRX(RobotMap.rightusquishPort);
+  public static TalonSRX level1CargoMotor = new TalonSRX(RobotMap.level1CargoPort);
+  //public static TalonSRX usquishMotorLeft = new TalonSRX(RobotMap.leftusquishPort);
+  public static TalonSRX level2CargoMotor = new TalonSRX(RobotMap.level2CargoPort);
 
   public static void extendIntake(){
     cargoPistons.set(DoubleSolenoid.Value.kForward);
@@ -42,14 +42,19 @@ public class Cargo extends Subsystem {
   }
 
   public static void intake(double s){
-    intakeCargo.set(ControlMode.PercentOutput,s);
-    usquishMotorLeft.set(ControlMode.PercentOutput, s);
-    usquishMotorRight.set(ControlMode.PercentOutput, s);
+    level1CargoMotor.set(ControlMode.PercentOutput,s);
+    level2CargoMotor.set(ControlMode.PercentOutput, s);
+    //usquishMotorRight.set(ControlMode.PercentOutput, s);
   }
 
   public static void shootCargo(double s){
-    usquishMotorLeft.set(ControlMode.PercentOutput, -s);
-    usquishMotorRight.set(ControlMode.PercentOutput, -s);
+    level2CargoMotor.set(ControlMode.PercentOutput, s);
+   // usquishMotorRight.set(ControlMode.PercentOutput, -s);
+  }
+
+  public static void outtake(double s){
+    level1CargoMotor.set(ControlMode.PercentOutput, s);
+    level2CargoMotor.set(ControlMode.PercentOutput, s);
   }
   
   @Override
