@@ -7,8 +7,10 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.Limelight;
 
 public class CamMode extends Command {
   public CamMode() {
@@ -24,13 +26,15 @@ public class CamMode extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (Robot.limelight.table.getEntry("camMode").getDouble(0) == 0){
-      Robot.limelight.table.getEntry("camMode").setNumber(1);
-      Robot.limelight.table.getEntry("ledMode").setNumber(1);
+    if (Limelight.table.getEntry("camMode").getDouble(0) == 0){
+      System.out.println("aaa"+ NetworkTableInstance.getDefault().getTable("limelight").getEntry("camMode"));//"turn off leds/processing");
+      Limelight.table.getEntry("camMode").setNumber(1);
+      Limelight.table.getEntry("ledMode").setNumber(1);
     }
     else{
-      Robot.limelight.table.getEntry("camMode").setNumber(0);
-      Robot.limelight.table.getEntry("ledMode").setNumber(3);
+      Limelight.table.getEntry("camMode").setNumber(0);
+      Limelight.table.getEntry("ledMode").setNumber(3);
+      System.out.println("turn on leds/turn on processing");
     }
     }
 
@@ -53,6 +57,6 @@ public class CamMode extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.limelight.table.getEntry("camMode").setNumber(1);
+   // Robot.limelight.table.getEntry("camMode").setNumber(1);
   }
 }

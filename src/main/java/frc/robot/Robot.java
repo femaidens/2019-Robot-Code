@@ -31,13 +31,13 @@ public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static OI m_oi;
   public static Limelight limelight;
-  public static LiftSpark liftSpark;
+  //public static LiftSpark liftSpark;
   public static Timer timer;
   
   //public static LiftSpark liftSpark;
   //public static Hatch hatch;
 
-  public static UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
+  //public static UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -51,13 +51,15 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     drivetrain = new Drivetrain();
     limelight = new Limelight();
-    liftSpark = new LiftSpark();
+    //liftSpark = new LiftSpark();
     timer = new Timer();
     timer.reset();
     timer.start();
-    Limelight.table.getEntry("camMode").setNumber(1);
-    Robot.limelight.table.getEntry("ledMode").setNumber(1);
-
+    //Limelight.table.getEntry("camMode").setNumber(1);
+    //System.out.println("led: aaaa");//bot.limelight.table.getEntry("ledMode").getDouble(0));
+    //Robot.limelight.table.getEntry("ledMode").setNumber(1);
+    //Robot.limelight.table.getEntry("camMode").setNumber(1);
+    //System.out.println("led: "+ Robot.limelight.table.getEntry("ledMode").getDouble(0));
     //liftSpark = new LiftSpark();
     //hatch = new Hatch();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
@@ -137,6 +139,11 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+    System.out.println("led: aaa "+ Robot.limelight.table.getEntry("ledMode").getDouble(0));
+    Robot.limelight.table.getEntry("ledMode").setNumber(3);
+    Robot.limelight.table.getEntry("camMode").setNumber(1);
+    System.out.println("led: "+ Robot.limelight.table.getEntry("ledMode").getDouble(0));
+
     System.out.println("startingggg");
   }
 

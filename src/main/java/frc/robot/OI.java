@@ -74,14 +74,16 @@ public class OI {
     casDown.whenPressed(new CascadeDown());
     */
 
-    //autoAlign.whenPressed(new AutoAlign()); //A button
+    autoAlign.whenPressed(new AutoAlign()); //A button
     autoAlign1.whileHeld(new AutoAlign_PID(.2,.2));
     autoAlign1.whenReleased(new StopAlign());
     
-    autoAlign.whileHeld(new AutoAlign()); 
+    //autoAlign.whileHeld(new AutoAlign()); 
     autoAlign.whenReleased(new StopAlign());
+    
     printTest.whenPressed(new PrintTest());
-    //camMode.whenPressed(new CamMode());
+
+    camMode.whenPressed(new CamMode());
     //casZero.whenPressed(new CascadeZero());
 
     /*

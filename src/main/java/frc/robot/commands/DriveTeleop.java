@@ -19,7 +19,7 @@ public class DriveTeleop extends Command{
   protected void initialize(){
   }
   protected void execute() {
-    System.out.println("commandinggg");
+    //System.out.println("commandinggg");
     Robot.drivetrain.drive();
   }
   
