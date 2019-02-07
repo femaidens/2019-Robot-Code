@@ -7,31 +7,16 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.Drivetrain;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
 
-public class DriveTeleop extends Command{
-  
-  public DriveTeleop(){ 
-    requires(Robot.drivetrain);
+public class CenterAuton extends CommandGroup {
+  /**
+   * Add your docs here.
+   */
+  public CenterAuton() {
+   addSequential(new DriveAuton(0.5, 5));
+   addSequential(new AutoalignAuton());
+   addSequential(new PushHatch());
   }
-  protected void initialize(){
-  }
-  protected void execute() {
-    //System.out.println("commandinggg");
-    Robot.drivetrain.driveTeleop();
-  }
-  
-  protected boolean isFinished() {
-    return false;
-  }
-  protected void end(){
-  //call auton method so we can set the speeds without joystick
-  }
-  
-  protected void interrupted(){
-  }
-  
-  }
-  
+}

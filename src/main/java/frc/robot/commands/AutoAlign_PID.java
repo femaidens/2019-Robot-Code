@@ -75,7 +75,7 @@ public class AutoAlign_PID extends Command {
     else if (current_error < -min_error) adjust -= min_command;
 
     
-    Drivetrain.drive(left_speed +adjust,right_speed-adjust);
+    Drivetrain.driveAuton(left_speed + adjust, right_speed - adjust);
 
     try {
       Thread.sleep((long)(time*1000));

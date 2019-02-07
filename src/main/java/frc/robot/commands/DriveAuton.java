@@ -7,14 +7,22 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.*;
-import frc.robot.commands.*;
+import frc.robot.RobotMap;
+import frc.robot.subsystems.Drivetrain;
 
-
-public class AutoAlign extends Command {
-  public AutoAlign() {
+public class DriveAuton extends Command {
+  
+  Ultrasonic ultra1 = new Ultrasonic(RobotMap.pingChannel1, RobotMap.echoChannel1);
+  Ultrasonic ultra2 = new Ultrasonic(RobotMap.pingChannel2, RobotMap.echoChannel2);
+  Ultrasonic ultra3 = new Ultrasonic(RobotMap.pingChannel3, RobotMap.echoChannel3);
+  double speed, distance;
+  
+  public DriveAuton(double s, double d) {
+    speed = s;
+    distance = d;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -22,35 +30,25 @@ public class AutoAlign extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    //Robot.limelight.table.getEntry("camMode").setNumber(0);
-    //Robot.limelight.table.getEntry("ledMode").setNumber(3);
-    Limelight.setLiveStream(0);
-    Limelight.setLEDMode(3);
-
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double degrees = Robot.limelight.getTx();
-    if(degrees > 10 || degrees < -10){
-      Robot.drivetrain.turnDegrees(degrees);
-    }
-    else{
-      Drivetrain.driveAuton(0.3, 0.3);
+    if (Drivetrain.ultra1.getRangeInches() > distance){
+      Robot.drivetrain.driveAuton(speed, speed);
     }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return true;
+    return false;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    
   }
 
   // Called when another command which requires one or more of the same
