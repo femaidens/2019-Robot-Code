@@ -9,9 +9,10 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Climber;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class ToggleFrontClimb extends Command {
-  /*
+  
   public ToggleFrontClimb() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -20,14 +21,19 @@ public class ToggleFrontClimb extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Climber.extendFront();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    if (Climber.frontPistons.get() == DoubleSolenoid.Value.kForward){
+      Climber.retractFront();
+    }
+    else{
+    Climber.extendFront();
+    }
   }
-*/
+
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
@@ -41,10 +47,10 @@ public class ToggleFrontClimb extends Command {
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
-  /*
+  
   @Override
   protected void interrupted() {
-    Climber.retractFront();
+    //Climber.retractFront();
   }
-  */
+  
 }

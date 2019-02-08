@@ -7,13 +7,18 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.Climber;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
+import frc.robot.subsystems.Drivetrain;
 
-public class ToggleBackClimb extends Command {
-  
-  public ToggleBackClimb() {
+public class DriveUltra extends Command {
+  double speed, distance;
+
+  public DriveUltra(double s, double d) {
+    speed = s;
+    distance = d;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -26,31 +31,27 @@ public class ToggleBackClimb extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (Climber.backPistons.get() == DoubleSolenoid.Value.kForward){
-      Climber.retractBack();
-    }
-    else{
-    Climber.extendBack();
+    //drives a distance AWAY FROM the target
+    if (Drivetrain.ultra1.getRangeInches() > distance){
+      Robot.drivetrain.driveAuton(speed, speed);
     }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return true;
+    return Drivetrain.ultra1.getRangeInches() <= distance;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.drivetrain.stopAlign();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
-  
   @Override
   protected void interrupted() {
-    //Climber.retractBack();
   }
-  
 }

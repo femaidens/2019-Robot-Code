@@ -7,20 +7,12 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
-import frc.robot.subsystems.Drivetrain;
 
-public class DriveAuton extends Command {
-  
-  Ultrasonic ultra1 = new Ultrasonic(RobotMap.pingChannel1, RobotMap.echoChannel1);
-  Ultrasonic ultra2 = new Ultrasonic(RobotMap.pingChannel2, RobotMap.echoChannel2);
-  Ultrasonic ultra3 = new Ultrasonic(RobotMap.pingChannel3, RobotMap.echoChannel3);
-  double speed, distance;
-  
-  public DriveAuton(double s, double d) {
+public class DriveDistance extends Command {
+  public static double speed, distance;
+  public DriveDistance(double s, double d){
     speed = s;
     distance = d;
     // Use requires() here to declare subsystem dependencies
@@ -35,20 +27,21 @@ public class DriveAuton extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (Drivetrain.ultra1.getRangeInches() > distance){
-      Robot.drivetrain.driveAuton(speed, speed);
+    if (Robot.drivetrain.frontRightHall.getPosition() < distance && Robot.drivetrain.frontLeftHall.getPosition() < distance){
+      Robot.drivetrain.driveAuton(0.5, 0.5);
     }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return Robot.drivetrain.frontRightHall.getPosition() >= distance && Robot.drivetrain.frontLeftHall.getPosition() >= distance;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.drivetrain.stopAlign();
   }
 
   // Called when another command which requires one or more of the same

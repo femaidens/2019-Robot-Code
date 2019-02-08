@@ -14,9 +14,9 @@ public class RightAuton extends CommandGroup {
    * Add your docs here.
    */
   public RightAuton() {
-    addSequential(new DriveAuton(0.5,5));
+    addSequential(new DriveUltra(0.5,5));
     addSequential(new TurnDegrees(-90));
-    addSequential(new AutoalignAuton());
+    addSequential(new AutoAlignAuton());
     addSequential(new PushHatch());
   }
 }

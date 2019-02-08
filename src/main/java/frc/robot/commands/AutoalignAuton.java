@@ -13,8 +13,8 @@ import frc.robot.subsystems.*;
 import frc.robot.commands.*;
 
 
-public class AutoalignAuton extends Command {
-  public AutoalignAuton() {
+public class AutoAlignAuton extends Command {
+  public AutoAlignAuton() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }

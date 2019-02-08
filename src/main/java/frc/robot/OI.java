@@ -87,8 +87,8 @@ public class OI {
     //casZero.whenPressed(new CascadeZero());
 
     /*
-    climbFront.toggleWhenPressed(new ToggleFrontClimb());
-    climbBack.toggleWhenPressed(new ToggleBackClimb());
+    climbFront.whenPressed(new ToggleFrontClimb());
+    climbBack.whenPressed(new ToggleBackClimb());
 
     intake.whileHeld(new IntakeCargo());
     shoot.whileHeld(new ShootCargo());

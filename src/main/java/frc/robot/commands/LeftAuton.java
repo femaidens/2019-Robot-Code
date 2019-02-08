@@ -14,7 +14,7 @@ public class LeftAuton extends CommandGroup {
    * Add your docs here.
    */
   public LeftAuton() {
-    addSequential(new DriveAuton(0.5, 5));
+    addSequential(new DriveUltra(0.5, 5));
     addSequential(new TurnDegrees(90));
     addSequential(new AutoAlignAuton());
     addSequential(new PushHatch());

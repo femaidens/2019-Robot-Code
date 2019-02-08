@@ -15,8 +15,8 @@ public class CenterAuton extends CommandGroup {
    * Add your docs here.
    */
   public CenterAuton() {
-   addSequential(new DriveAuton(0.5, 5));
-   addSequential(new AutoalignAuton());
+   addSequential(new DriveUltra(0.5, 5));
+   addSequential(new AutoAlignAuton());
    addSequential(new PushHatch());
   }
 }

@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DigitalOutput;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -65,6 +68,12 @@ public class RobotMap {
   //lift hall sensor ports 
   public static int casHallLeft = 0;
   public static int casHallRight = 0;
+
+  //ultraonic ports
+  public static int pingChannel2 = 0;
+  public static int pingChannel1 = 0;
+  public static int echoChannel1 = 0;
+  public static int echoChannel2 = 0;
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

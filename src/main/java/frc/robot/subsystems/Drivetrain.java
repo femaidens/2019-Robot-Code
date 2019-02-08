@@ -33,7 +33,6 @@ public class Drivetrain extends Subsystem{
 
 	public static Ultrasonic ultra1 = new Ultrasonic(RobotMap.pingChannel1, RobotMap.echoChannel1);
     public static Ultrasonic ultra2 = new Ultrasonic(RobotMap.pingChannel2, RobotMap.echoChannel2);
-    public static Ultrasonic ultra3 = new Ultrasonic(RobotMap.pingChannel3, RobotMap.echoChannel3);
 	public static double radius = 8;
 	public static double gear_ratio = 50/12;
 	public static double constant = gear_ratio*Math.pow(radius, 2)*Math.PI;
