@@ -15,7 +15,7 @@ import frc.robot.OI;
 
 public class AutoAlign_PID extends Command {
 
-  public final static double Kp = 0.01;
+  public final static double Kp = 0.02;
   public final static double Ki = 0.0;
   public final static double Kd = 0.0;
   //public double distance, left_speed, right_speed;
@@ -61,8 +61,10 @@ public class AutoAlign_PID extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    System.out.println("holy shit");
+    //System.out.println("holy shit");
     //Robot.drivetrain.turnDegrees(Robot.limelight.getTx());
+    System.out.println(Limelight.objectSighted());
+    System.out.println(Limelight.getTx());
     if (!Limelight.objectSighted()) return;
 
     previous_error = current_error;
@@ -70,6 +72,9 @@ public class AutoAlign_PID extends Command {
     integral = (current_error+previous_error)/2*(time);
     derivative = (current_error-previous_error)/time;
     adjust = Kp*current_error + Ki*integral + Kd*derivative;
+    System.out.println("Tx:\t"+ current_error);
+    System.out.println("adjust:"+adjust);
+    
 
     if (current_error > min_error) adjust += min_command;
     else if (current_error < -min_error) adjust -= min_command;

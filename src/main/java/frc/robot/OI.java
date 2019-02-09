@@ -75,7 +75,7 @@ public class OI {
     */
 
     autoAlign.whenPressed(new AutoAlign()); //A button
-    autoAlign1.whileHeld(new AutoAlign_PID(.2,.2));
+    autoAlign1.whileHeld(new AutoAlign_PID(.3,.3));
     autoAlign1.whenReleased(new StopAlign());
     
     //autoAlign.whileHeld(new AutoAlign()); 
