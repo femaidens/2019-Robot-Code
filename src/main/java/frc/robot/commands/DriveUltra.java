@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.SerialCom;
 
 public class DriveUltra extends Command {
   double speed, distance;
@@ -32,7 +33,7 @@ public class DriveUltra extends Command {
   @Override
   protected void execute() {
     //drives a distance AWAY FROM the target
-    if (Drivetrain.ultra1.getRangeInches() > distance){
+    if (Double.parseDouble(SerialCom.receive()[1]) > distance){
       Robot.drivetrain.driveAuton(speed, speed);
     }
   }
@@ -40,7 +41,7 @@ public class DriveUltra extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return Drivetrain.ultra1.getRangeInches() <= distance;
+    return Double.parseDouble(SerialCom.receive()[1]) <= distance;
   }
 
   // Called once after isFinished returns true
