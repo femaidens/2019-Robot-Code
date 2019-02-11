@@ -15,6 +15,7 @@ import frc.robot.commands.ShootCargo;
 import frc.robot.commands.ToggleBackClimb;
 import frc.robot.commands.ToggleFrontClimb;
 import frc.robot.commands.ToggleIntake;
+import frc.robot.commands.driveButtonTest;
 import edu.wpi.first.wpilibj.buttons.*;
 
 /**
@@ -46,9 +47,13 @@ public class OI {
   //public static Button climbBack = new JoystickButton(driveJoystick, 0);
 
   //cargo
-  public static Button intake = new JoystickButton(driveJoystick, 0);
-  public static Button shoot = new JoystickButton(driveJoystick, 0);
-  public static Button togglePistons = new JoystickButton(driveJoystick, 0);
+  //public static Button intake = new JoystickButton(driveJoystick, 0);
+  //public static Button shoot = new JoystickButton(driveJoystick, 0);
+  //public static Button togglePistons = new JoystickButton(driveJoystick, 0);
+
+  //test
+  public static Button up = new JoystickButton(driveJoystick, 1);
+  public static Button down = new JoystickButton(driveJoystick, 2);
 
   public OI(){
     System.out.println("OI running");
@@ -58,15 +63,21 @@ public class OI {
    // casUp.whenPressed(new CascadeUp());
    // casDown.whenPressed(new CascadeDown());
 
-    hatch.whenPressed(new PushHatch()); //A button
+    //hatch.whenPressed(new PushHatch()); //A button
     
     /*
     climbFront.toggleWhenPressed(new ToggleFrontClimb());
     climbBack.toggleWhenPressed(new ToggleBackClimb());
 */
-    intake.whileHeld(new IntakeCargo());
-    shoot.whileHeld(new ShootCargo());
-    togglePistons.toggleWhenPressed(new ToggleIntake());
+    //intake.whileHeld(new IntakeCargo());
+    //shoot.whileHeld(new ShootCargo());
+    //togglePistons.toggleWhenPressed(new ToggleIntake());
+
+    up.whileHeld(new driveButtonTest(0.15));
+    up.whenReleased(new driveButtonTest(0.0));
+
+    down.whileHeld(new driveButtonTest(-0.15));
+    down.whenReleased(new driveButtonTest(0.0));
 
   }
   }

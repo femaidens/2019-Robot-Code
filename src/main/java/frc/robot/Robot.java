@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Hatch;
+import frc.robot.subsystems.SerialCom;
 import edu.wpi.first.wpilibj.Compressor;
 
 /**
@@ -25,10 +26,11 @@ import edu.wpi.first.wpilibj.Compressor;
  */
 public class Robot extends TimedRobot {
  // public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  //public static Drivetrain drivetrain = new Drivetrain();
-  public static Hatch hatch;
+  public static Drivetrain drivetrain;
+  //public static Hatch hatch;
   public static OI m_oi;
-  public static Compressor compressete;
+  //public static Compressor compressete;
+  public static SerialCom serialCom;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -42,9 +44,11 @@ public class Robot extends TimedRobot {
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     //SmartDashboard.putData("Auto mode", m_chooser);
-    compressete = new Compressor();
-    hatch = new Hatch();
+    //compressete = new Compressor();
+    //hatch = new Hatch();
+    drivetrain = new Drivetrain();
     m_oi = new OI();
+    serialCom = new SerialCom();
   }
 
   /**

@@ -15,9 +15,10 @@ import frc.robot.RobotMap;
 
 public class Drivetrain extends Subsystem{
 
-	/*
-public static CANSparkMax frontLeft = new CANSparkMax(RobotMap.frontLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
-public static CANSparkMax frontRight = new CANSparkMax(RobotMap.frontRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
+	
+public static CANSparkMax frontLeft = new CANSparkMax(5, CANSparkMaxLowLevel.MotorType.kBrushless);
+public static CANSparkMax frontRight = new CANSparkMax(12, CANSparkMaxLowLevel.MotorType.kBrushless);
+/*
 public static CANSparkMax rearLeft = new CANSparkMax(RobotMap.rearLeftPort, CANSparkMaxLowLevel.MotorType.kBrushless);
 public static CANSparkMax rearRight = new CANSparkMax(RobotMap.rearRightPort, CANSparkMaxLowLevel.MotorType.kBrushless);
 
@@ -29,15 +30,17 @@ public static AnalogGyro gyro = new AnalogGyro(0);
 */
 public Drivetrain(){
 }	
-/*
+
 public static void driveTeleop(){
 
-	double leftSpeed = OI.driveJoystick.getRawAxis(1);
-	double rightSpeed = OI.driveJoystick.getRawAxis(5);
-	frontLeft.set(leftSpeed);
-rearLeft.set(leftSpeed);
+	//double leftSpeed = OI.driveJoystick.getRawAxis(1)*0.5;
+	double rightSpeed = - OI.driveJoystick.getRawAxis(5);
+	frontLeft.set(rightSpeed);
+//rearLeft.set(leftSpeed);
 frontRight.set(rightSpeed); 
-rearRight.set(rightSpeed);
+//rearRight.set(rightSpeed);
+}
+/*
 
 while(leftSpeed != 0 || rightSpeed != 0){
 	if(leftSpeed != 0)
@@ -70,16 +73,16 @@ while(leftSpeed != 0 || rightSpeed != 0){
 	}
 }
 }
+*/
 
 public void driveAuton(double l, double r){
-frontLeft.set(l);
-rearLeft.set(l);
-frontRight.set(r); 
-rearRight.set(r);
+	frontLeft.set(l);
+	//rearLeft.set(l);
+	frontRight.set(r); 
+	//rearRight.set(r);
 } 
-*/
 public void initDefaultCommand(){
-	//setDefaultCommand(new DriveTeleop());
+	setDefaultCommand(new DriveTeleop());
 	//System.out.println("teleopping");
 }
 }
