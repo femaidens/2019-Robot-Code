@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Hatch;
+import frc.robot.subsystems.LiftSpark;
 import frc.robot.subsystems.SerialCom;
 import edu.wpi.first.wpilibj.Compressor;
 
@@ -31,6 +32,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   //public static Compressor compressete;
   public static SerialCom serialCom;
+  public static LiftSpark liftSpark;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
