@@ -33,13 +33,15 @@ public class PushHatch extends Command {
     //System.out.println("extenddd");
    
     if (extended){
-      Hatch.retract();
+      Hatch.retract1();
+      Hatch.retract2();
       extended = false;
       System.out.println("retractt");
 
     }
     else{
-      Hatch.extend();
+      Hatch.extend1();
+      Hatch.extend2();
       extended = true;
       System.out.println("extendd");
       

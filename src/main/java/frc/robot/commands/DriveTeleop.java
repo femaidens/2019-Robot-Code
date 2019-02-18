@@ -32,12 +32,13 @@ public class DriveTeleop extends Command{
   protected boolean isFinished() {
     return false;
   }
+
   protected void end(){
-  //call auton method so we can set the speeds without joystick
+    //call auton method so we can set the speeds without joystick
   }
-  //g
+  //git 
   protected void interrupted(){
   }
   
-  }
+}
   

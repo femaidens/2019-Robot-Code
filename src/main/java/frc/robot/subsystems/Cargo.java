@@ -18,17 +18,17 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
  */
 public class Cargo extends Subsystem {
 
-  public Cargo(){
-  }
-//
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   //the 2 cargo pistons with 1 double solenoid
-  public static DoubleSolenoid cargoPistons = new DoubleSolenoid(RobotMap.cargoPistPort1, RobotMap.cargoPistPort2);
+  public static DoubleSolenoid cargoPistons = new DoubleSolenoid(RobotMap.cargoPcmPort, RobotMap.cargoPistPort1, RobotMap.cargoPistPort2);
   //public static DoubleSolenoid cargoPistRight = new DoubleSolenoid(RobotMap.cargoPistPortR1, RobotMap.cargoPistPortR2);
   public static TalonSRX level1CargoMotor = new TalonSRX(RobotMap.level1CargoPort);
   //public static TalonSRX usquishMotorLeft = new TalonSRX(RobotMap.leftusquishPort);
   public static TalonSRX level2CargoMotor = new TalonSRX(RobotMap.level2CargoPort);
+
+  public Cargo(){
+  }
 
   public static void extendIntake(){
     cargoPistons.set(DoubleSolenoid.Value.kForward);

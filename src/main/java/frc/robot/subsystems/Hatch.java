@@ -7,22 +7,34 @@ import frc.robot.commands.PushHatch;
 
 public class Hatch extends Subsystem{
 
-public Hatch(){
-  System.out.println("subsytsem");
-}
+  public static DoubleSolenoid hatchPiston1 = new DoubleSolenoid(RobotMap.pcmHatchPort1, RobotMap.hatchPort1a, RobotMap.hatchPort1b);
+  public static DoubleSolenoid hatchPiston2 = new DoubleSolenoid(RobotMap.pcmHatchPort2, RobotMap.hatchPort2a, RobotMap.hatchPort2b);
 
-public static DoubleSolenoid hatchPiston = new DoubleSolenoid(RobotMap.hatchPort1, RobotMap.hatchPort2);
+  public Hatch(){
+    System.out.println("subsytsem");
+  }
 
-public static void extend(){
-System.out.println(hatchPiston.get());
-hatchPiston.set(DoubleSolenoid.Value.kForward);
-System.out.println(hatchPiston.get());
-}
+  public static void extend1(){
+    System.out.println(hatchPiston1.get());
+    hatchPiston1.set(DoubleSolenoid.Value.kForward);
+    System.out.println(hatchPiston1.get());
+  }
 
-public static void retract(){
-hatchPiston.set(DoubleSolenoid.Value.kReverse);
-System.out.println(hatchPiston.get());
-}
+  public static void retract1(){
+    hatchPiston1.set(DoubleSolenoid.Value.kReverse);
+    System.out.println(hatchPiston1.get());
+  }
+
+  public static void extend2(){
+    System.out.println(hatchPiston2.get());
+    hatchPiston2.set(DoubleSolenoid.Value.kForward);
+    System.out.println(hatchPiston2.get());
+  }
+  
+  public static void retract2(){
+    hatchPiston2.set(DoubleSolenoid.Value.kReverse);
+    System.out.println(hatchPiston2.get());
+  }
 
 public void initDefaultCommand(){
   //setDefaultCommand(new PushHatch());

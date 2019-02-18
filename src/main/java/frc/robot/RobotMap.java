@@ -16,55 +16,54 @@ package frc.robot;
 public class RobotMap {
 
   //drivtrain motors (spark max)
-  public static int frontRightPort = 12;
-  public static int frontLeftPort = 15;
-  public static int rearRightPort = 2;
-  public static int rearLeftPort = 0;
+  public static int frontRightPort = 4;
+  public static int frontLeftPort = 3;
+  public static int centerRightPort = 13;
+  public static int centerLeftPort = 1;
+  public static int rearRightPort = 12;
+  public static int rearLeftPort = 6;
+
+  public static int gyroPort = 0;
 
   //ports for hatch DoubleSolenoid 
-  public static int hatchPort1 = 2; //placeholder
-  public static int hatchPort2 = 3; //placeholder
+  public static int pcmHatchPort1 = 02; //placeholder
+  public static int pcmHatchPort2 = 02; //placeholder
+  public static int hatchPort1a = 0; //placeholder
+  public static int hatchPort1b = 1; //placeholder
+  public static int hatchPort2a = 2; //placeholder
+  public static int hatchPort2b = 3; //placeholder
 
   //ports for cascade motors
   public static int leftCasPort = 0; //placeholder
-  public static int rightCasPort = 1; //placeholder
-
-  //ports for encoders 
-  //placeholders
-  public static int casEncLeft1 = 0;
-  public static int casEncLeft2 = 1;
-  public static int casEncRight1 = 2;
-  public static int casEncRight2 = 0;
+  public static int rightCasPort = 2; //placeholder
 
   //joystick 
   public static int driveJoyPort = 0; //placeholder
 
   //climber (front pistons)
-  public static int frontClimbPort1 = 0; 
-  public static int frontClimbPort2 = 0; 
+  public static int pcmClimberFrontPort = 01;
+  public static int frontClimbPort1 = 6; 
+  public static int frontClimbPort2 = 7; 
   //public static int frontClimbPort3 = 0; 
   //public static int frontClimbPort4 = 0; 
 
   //(back pistons)
-  public static int backClimbPort1 = 0; 
-  public static int backClimbPort2 = 0; 
+  public static int pcmClimberBackPort = 01;
+  public static int backClimbPort1 = 4; 
+  public static int backClimbPort2 = 5; 
   //public static int backClimbPort3 = 0; 
   //public static int backClimbPort4 = 0; 
 
   //cargo ports (pistons)
-  public static int cargoPistPort1 = 0;
-  public static int cargoPistPort2 = 0;
+  public static int cargoPcmPort = 01;
+  public static int cargoPistPort1 = 2;
+  public static int cargoPistPort2 = 3;
   //public static int cargoPistPortR1 = 0;
   //public static int cargoPistPortR2 = 0;
 
   //cargo motor ports 
   public static int level1CargoPort = 0;
   public static int level2CargoPort = 0;
-  
-
-  //lift hall sensor ports 
-  public static int casHallLeft = 0;
-  public static int casHallRight = 0;
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

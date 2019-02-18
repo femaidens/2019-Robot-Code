@@ -27,6 +27,7 @@ public class LiftSpark extends Subsystem {
   //public static double position = leftLiftHall.getPosition();
 
   public LiftSpark(){
+    leftLiftHall.setPosition(0);
     initposition = (int)(leftLiftHall.getPosition());
     height = new int[] {initposition, 10 + initposition, 20 + initposition, 30 + initposition, 40 + initposition, 50 + initposition, 60 + initposition};
   }
@@ -45,6 +46,7 @@ public class LiftSpark extends Subsystem {
     level = 0;
     moving = false;
   }
+
   public static void up(){
     //position = leftLiftHall.getPosition();
     if(level < 6){
@@ -66,6 +68,7 @@ public class LiftSpark extends Subsystem {
     System.out.println("level: " + level);
     System.out.println("position: " + leftLiftHall.getPosition());
   }
+
   public static void down(){
     //position = leftLiftHall.getPosition();
     if (level > 0){
@@ -82,6 +85,7 @@ public class LiftSpark extends Subsystem {
     System.out.println("level: " + level);
     System.out.println("position: " + leftLiftHall.getPosition());
   }
+
   public static void printPosition(){
     System.out.println("position: " + leftLiftHall.getPosition());
     //System.out.println("position variable: " + position);
