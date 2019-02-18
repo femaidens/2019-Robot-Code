@@ -31,8 +31,8 @@ public class Robot extends TimedRobot {
   //public static Hatch hatch;
   public static OI m_oi;
   //public static Compressor compressete;
-  public static SerialCom serialCom;
-  public static LiftSpark liftSpark;
+  //public static SerialCom serialCom;
+  //public static LiftSpark liftSpark;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -50,7 +50,7 @@ public class Robot extends TimedRobot {
     //hatch = new Hatch();
     drivetrain = new Drivetrain();
     m_oi = new OI();
-    serialCom = new SerialCom();
+    //serialCom = new SerialCom();
   }
 
   /**

@@ -21,8 +21,11 @@ public class DriveTeleop extends Command{
   
   }
   protected void execute() {
-    System.out.println("commandinggg");
+    //System.out.println("commandinggg");
     Drivetrain.driveTeleop();
+    System.out.println(Drivetrain.rearLeftHall.getPosition());
+    System.out.println(Drivetrain.rearRightHall.getPosition());
+    System.out.println();
     //System.out.println(Drivetrain.leftHall.getPosition());
   }
   
